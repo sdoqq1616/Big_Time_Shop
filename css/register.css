@@ -1,0 +1,315 @@
+/* © 2023 All rights reserved. Grupo Cac. Trabajo en Grupo: EAugusto Roman,  Ignacio Perez, Smith Guo y Ariel Cuenca*/
+/* © 2023 All rights reserved. Grupo Cac. Trabajo en Grupo: EAugusto Roman,  Ignacio Perez, Smith Guo y Ariel Cuenca*/
+/* © 2023 All rights reserved. Grupo Cac. Trabajo en Grupo: EAugusto Roman,  Ignacio Perez, Smith Guo y Ariel Cuenca*/
+/* © 2023 All rights reserved. Grupo Cac. Trabajo en Grupo: EAugusto Roman,  Ignacio Perez, Smith Guo y Ariel Cuenca*/
+/* © 2023 All rights reserved. Grupo Cac. Trabajo en Grupo: EAugusto Roman,  Ignacio Perez, Smith Guo y Ariel Cuenca*/
+
+
+body {
+    background-color: #f9f9f9;
+}
+
+
+
+.registerarea {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.login {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+
+}
+
+
+
+.login>a {
+    position: relative;
+    display: flex;
+    color: #666;
+    align-items: center;
+    padding-left: 40px;
+    width: 160px;
+    height: 35px;
+    border-radius: 8px;
+    border: 2px solid #008ecc;
+    background-color: #fff;
+    transition: all .5s;
+}
+
+.login>a:hover {
+    color: #fff;
+    background-color: #b8e5f9;
+}
+
+.login>a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    width: 28px;
+    height: 28px;
+    background: url(../images/mapa\ de\ imágenes.png) no-repeat;
+    background-position: -48px 5px;
+    background-size: 100px 44px;
+}
+
+
+.register_hd {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.register_hd h3 {
+    color: #008ecc;
+    font-size: 24px;
+}
+
+.register_bd {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.first_row {
+    display: flex;
+}
+
+input {
+    display: inline-block;
+    padding-left: 10px;
+    height: 35px;
+    border-radius: 5px;
+    box-shadow: 4px 3px 1px #eee;
+}
+
+.username,
+.surname {
+    display: flex;
+    width: 230px;
+    flex-direction: column;
+    margin: 10px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+
+.email,
+.password,
+.conf_password {
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+}
+
+.password {
+    position: relative;
+}
+
+.eye {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    width: 30px;
+    height: 30px;
+}
+
+.eye img {
+    width: 100%;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.register_btn {
+    width: 170px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #008ecc;
+}
+
+
+.goto_login {
+
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+
+}
+
+.goto_login a {
+    color: #000;
+    font-size: 16px;
+}
+
+.goto_login a i {
+    color: #008ecc;
+}
+
+footer {
+    height: 100px;
+}
+
+/* venata modal */
+
+.login-bg {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1;
+}
+
+.box_modal{
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 8px;
+    background-color: #fff;
+    animation: temblor .3s linear;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.box_modal h4{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    color: #fff;
+    padding-left: 10px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    background-size: 400%;
+    animation: changeColor 8s infinite;
+}
+
+
+.box_modal h4::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 50px;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.box_modal .warning_msg{
+    display: flex;
+    flex-wrap: wrap;
+    color: #666;
+    height: 150px;  
+    padding: 15px 10px;
+}
+
+
+
+.box_modal div{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: end;
+    padding-right: 20px;
+    border-top: 1px solid #03a9f4;
+}
+
+#warning_btn{
+    
+    color: #fff;
+    width: 88px;
+    height: 30px;
+    line-height: 30px;
+    font-family: sans-serif;
+    border-radius: 30px;
+    background-color: #008ecc;
+    transition: all .5s;
+}
+
+
+
+#warning_btn:hover{
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    animation: changeColor 8s infinite;
+}
+
+
+
+@keyframes temblor {
+    0%{
+
+    }
+    10%{
+        transform: translate(-45%,-45%);
+    }
+    20%{
+        transform: translate(-50%,-50%);
+    }
+    30%{
+        transform: translate(-55%,-55%);
+    }
+    40%{
+        transform: translate(-50%,-50%);
+    }
+    50%{
+        transform: translate(-45%,-45%);
+    }
+    60%{
+        transform: translate(-50%,-50%);
+    }
+    70%{
+        transform: translate(-45%,-45%);
+    }
+    80%{
+        transform: translate(-50%,-50%);
+    }
+    90%{
+        transform: translate(-55%,-55%);
+    }
+    100%{
+        transform: translate(-50%,-50%);
+    }
+}
+
+
+@keyframes changeColor {
+    
+    100%{
+        background-position: 400% 0;
+    }
+}
+
+
+@media screen and (max-width:450px) {
+
+    .username,
+    .surname {
+        width: 150px;
+    }
+}
