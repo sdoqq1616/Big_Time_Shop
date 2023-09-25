@@ -3,7 +3,7 @@ Big Time Shop es una plataforma líder en comercio electrónico especializada en
 
 
 
-Hemos construido un sitio web de comercio electrónico sencillo utilizando HTML, CSS y JavaScript, con un enfoque principal en la venta de teléfonos, tabletas y laptops. El sitio web está compuesto por varios archivos, incluyendo index.html, register.html, login.html y nosotros.html. En la sección de CSS, hemos creado los archivos base.css y common.css para estilizar la cabecera y el pie de página del sitio. Cada página también tiene su propio archivo CSS específico, como index.css, register.css, login.css y nosotros.css.
+Hemos construido un sitio web de comercio electrónico sencillo utilizando HTML, CSS y JavaScript, con un enfoque principal en la venta de teléfonos, tabletas y laptops. El sitio web está compuesto por varios archivos, incluyendo index.html, register.html, login.html，404.html y nosotros.html. En la sección de CSS, hemos creado los archivos base.css y common.css para estilizar la cabecera y el pie de página del sitio. Cada página también tiene su propio archivo CSS específico, como index.css, register.css, login.css y nosotros.css,etc.
 
 En la página index.html, además de la cabecera y el pie de página, hemos incluido tres capas de visualización de productos diferentes para teléfonos, laptops y tablets. También hemos agregado dos carruseles en la cabecera y el pie de página, los cuales muestran automáticamente nuestros productos. Además, nuestro sitio web utiliza un diseño receptivo de última generación, lo que significa que los elementos de la página se optimizan automáticamente para adaptarse a diferentes tamaños de pantalla, brindando una experiencia visual excelente.
 
