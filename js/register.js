@@ -8,13 +8,13 @@
 
 function registerUser(){
     
-    var username = document.getElementById('username');
-    var surname = document.getElementById('surname');
-    var email = document.getElementById('email');
-    var password = document.getElementById('password');
-    var warning_msg = document.querySelector('.warning_msg');
-    var conf_password = document.getElementById('conf_password');
-    var title = document.querySelector('#bg_title');
+    let username = document.getElementById('username');
+    let surname = document.getElementById('surname');
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
+    let warning_msg = document.querySelector('.warning_msg');
+    let conf_password = document.getElementById('conf_password');
+    let title = document.querySelector('#bg_title');
     
 
     if(username.value ==''){
@@ -46,9 +46,9 @@ function registerUser(){
         warning_msg.innerHTML = '¡La contraseña debe tener una longitud de 6 a 15 caracteres!';
         return false;
     }else{
-        var data = getData();
+        let data = getData();
         if(data){
-            for(var i=0;i<data.length;i++){
+            for(let i=0;i<data.length;i++){
                 if(data[i].email == email.value){
                     bg.style.display ='block';
                     warning_msg.innerHTML = '¡El correo electrónico ingresado ha sido registrado!';
@@ -57,7 +57,7 @@ function registerUser(){
             }
         }
 
-        var user = {
+        let user = {
             username:username.value,
             surname:surname.value,
             email:email.value,
@@ -84,16 +84,16 @@ function registerUser(){
 window.addEventListener('DOMContentLoaded',function(){
     
 
-    var register_btn = document.getElementById('register_btn');
-    var warning_btn = document.querySelector('#warning_btn');
-    var bg = document.querySelector('#bg');
+    let register_btn = document.getElementById('register_btn');
+    let warning_btn = document.querySelector('#warning_btn');
+    let bg = document.querySelector('#bg');
     
 
     register_btn.addEventListener('click',function(){
         
-        var user = registerUser();
+        let user = registerUser();
         if(user){
-            var data = getData();
+            let data = getData();
             data.push(user);
             saveData(data);
             setTimeout(function() {
@@ -106,7 +106,7 @@ window.addEventListener('DOMContentLoaded',function(){
         bg.style.display ='none';
     }
 
-    var form = document.querySelector('form');
+    let form = document.querySelector('form');
     form.addEventListener('submit', function(e) {
         e.preventDefault(); 
       
@@ -118,9 +118,9 @@ window.addEventListener('DOMContentLoaded',function(){
     
     
     // to see password
-    var eye = document.querySelector('#eye');
-        var pwd = document.getElementById('password');
-        var flag = 0;
+    let eye = document.querySelector('#eye');
+        let pwd = document.getElementById('password');
+        let flag = 0;
         eye.onclick = function () {
             if (flag == 0) {
                 flag = 1;

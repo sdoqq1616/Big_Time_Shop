@@ -157,6 +157,29 @@ nav{
     background-size: contain;
 }
 
+
+
+.search-result{
+    display: none;
+    position: absolute;
+    top: 111px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f3f9fb;
+    z-index: 999;
+    overflow: auto;
+    transition: all .5s;
+}
+
+.search-result div{
+    line-height: 40px;
+    padding-left: 20px ;
+}
+
+.search-result div:nth-child(2n){
+    background-color: #79bfdd;
+}
+
 .user{
     margin-left: 100px;
     display: flex;
@@ -650,7 +673,9 @@ footer{
         display: none;
     }
 
-
+    .search-result{
+        top: 71px;
+    }
     /* good movil */
 
     .goods li{

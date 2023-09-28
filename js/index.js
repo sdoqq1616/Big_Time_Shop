@@ -6,13 +6,13 @@
 
 // controla el tamano de banner
 function bannerResize() {
-    var banner = document.querySelector('.focus');
-    var ul = banner.querySelector('ul');
-    var arrow_l = document.querySelector(".arrow-l");
-    var arrow_r = document.querySelector(".arrow-r");
-    var lis = ul.children;
+    let banner = document.querySelector('.focus');
+    let ul = banner.querySelector('ul');
+    let arrow_l = document.querySelector(".arrow-l");
+    let arrow_r = document.querySelector(".arrow-r");
+    let lis = ul.children;
     ul.style.width = banner.offsetWidth * (lis.length) + "px";
-    for (var i = 0; i < lis.length; i++) {
+    for (let i = 0; i < lis.length; i++) {
         lis[i].style.width = banner.offsetWidth + "px";
         // console.log(banner.offsetWidth + "px");
         // console.log(banner.offsetLeft + "px");
@@ -22,15 +22,15 @@ function bannerResize() {
     arrow_l.style.left = banner.offsetLeft + 'px';
     arrow_r.style.left = banner.offsetWidth + banner.offsetLeft - arrow_r.offsetWidth / 2 + 'px';
 
-    var current = document.querySelector(".current");
+    let current = document.querySelector(".current");
     if (current) {
-        var index = current.getAttribute('index');
+        let index = current.getAttribute('index');
         // console.log(banner.offsetWidth +" *"+ index + "px");
         ul.style.left = -banner.offsetWidth * index + "px";
     }
 
     //m_footer resize
-    var m_footer = document.querySelector('.m_footer');
+    let m_footer = document.querySelector('.m_footer');
     if (m_footer) {
         m_footer.style.width = document.querySelector('.banner').offsetWidth + 'px';
     }
@@ -49,36 +49,36 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
     //  first banner
-    var arrow_l = document.querySelector(".arrow-l").querySelector('a');
-    var arrow_r = document.querySelector(".arrow-r").querySelector('a');
-    var banner = document.querySelector(".focus");
-    var circle = document.querySelector(".circle");
-    var ul = banner.querySelector('ul');
+    let arrow_l = document.querySelector(".arrow-l").querySelector('a');
+    let arrow_r = document.querySelector(".arrow-r").querySelector('a');
+    let banner = document.querySelector(".focus");
+    let circle = document.querySelector(".circle");
+    let ul = banner.querySelector('ul');
 
     //inicialización de banner
-    for (var i = 0; i < ul.children.length; i++) {
-        var li = document.createElement("li");
+    for (let i = 0; i < ul.children.length; i++) {
+        let li = document.createElement("li");
         li.setAttribute('index', i);
         circle.appendChild(li);
         li.addEventListener('click', function () {
-            for (var i = 0; i < circle.children.length; i++) {
+            for (let i = 0; i < circle.children.length; i++) {
                 circle.children[i].className = '';
             }
             this.className = 'current';
             num = this.getAttribute('index');
             current = num;
-            var target = -ul.children[0].offsetWidth * num;
+            let target = -ul.children[0].offsetWidth * num;
             animation(ul, target);
         })
 
     }
     circle.children[0].className = 'current';
-    var first = ul.children[0].cloneNode(true);
+    let first = ul.children[0].cloneNode(true);
     ul.appendChild(first);
 
 
-    var num = 0;
-    var current = 0;
+    let num = 0;
+    let current = 0;
     arrow_r.addEventListener('click', function () {
         if (num == ul.children.length - 1) {
             num = 0;
@@ -91,9 +91,9 @@ window.addEventListener('DOMContentLoaded', function () {
             current = 0;
         }
 
-        var target = -ul.children[0].offsetWidth * num;
+        let target = -ul.children[0].offsetWidth * num;
 
-        for (var i = 0; i < circle.children.length; i++) {
+        for (let i = 0; i < circle.children.length; i++) {
             circle.children[i].className = '';
         }
         circle.children[current].className = 'current';
@@ -110,9 +110,9 @@ window.addEventListener('DOMContentLoaded', function () {
         if (current < 0) {
             current = circle.children.length - 1;
         }
-        var target = -ul.children[0].offsetWidth * num;
+        let target = -ul.children[0].offsetWidth * num;
 
-        for (var i = 0; i < circle.children.length; i++) {
+        for (let i = 0; i < circle.children.length; i++) {
             circle.children[i].className = '';
         }
         circle.children[current].className = 'current';
@@ -127,22 +127,22 @@ window.addEventListener('DOMContentLoaded', function () {
 
     // subnav control
 
-    var as = document.querySelector('.subnav').querySelectorAll('a');
-    var map = ['#celulares', '#tables', '#laptops'];
-    for (var i = 0; i < as.length; i++) {
+    let as = document.querySelector('.subnav').querySelectorAll('a');
+    let map = ['#celulares', '#tables', '#laptops'];
+    for (let i = 0; i < as.length; i++) {
         as[i].goto = map[i];
         as[i].onclick = function () {
-            var obj = document.querySelector(this.goto);
+            let obj = document.querySelector(this.goto);
             scrollAnimation(window, obj.offsetTop);
         }
     }
 
     // footer control
     as = document.querySelector('#mod_service').querySelectorAll('a');
-    for (var i = 0; i < as.length; i++) {
+    for (let i = 0; i < as.length; i++) {
         as[i].goto = map[i];
         as[i].onclick = function () {
-            var obj = document.querySelector(this.goto);
+            let obj = document.querySelector(this.goto);
             scrollAnimation(window, obj.offsetTop);
         }
     }
@@ -150,24 +150,24 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //second banner
 
-    var s_banner = document.querySelector(".electronics_models");
-    var s_ul = s_banner.querySelector('ul');
-    var s_circle = document.querySelector(".focus_circle");
-    var s_num = 0;
-    var s_current = 0;
+    let s_banner = document.querySelector(".electronics_models");
+    let s_ul = s_banner.querySelector('ul');
+    let s_circle = document.querySelector(".focus_circle");
+    let s_num = 0;
+    let s_current = 0;
 
-    for (var i = 0; i < s_ul.children.length; i++) {
-        var li = document.createElement("li");
+    for (let i = 0; i < s_ul.children.length; i++) {
+        let li = document.createElement("li");
         li.setAttribute('index', i);
         s_circle.appendChild(li);
         li.addEventListener('click', function () {
-            for (var i = 0; i < s_circle.children.length; i++) {
+            for (let i = 0; i < s_circle.children.length; i++) {
                 s_circle.children[i].className = '';
             }
             this.className = 'current';
             s_num = this.getAttribute('index');
             s_current = s_num;
-            var target = -(s_ul.children[0].offsetWidth + 10) * s_num;
+            let target = -(s_ul.children[0].offsetWidth + 10) * s_num;
             animation(s_ul, target);
         })
 
@@ -175,8 +175,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
     s_circle.children[0].className = 'current';
 
-    for (var i = 0; i < s_circle.children.length; i++) {
-        var li = s_ul.children[i].cloneNode(true);
+    for (let i = 0; i < s_circle.children.length; i++) {
+        let li = s_ul.children[i].cloneNode(true);
         s_ul.appendChild(li);
     }
 
@@ -195,9 +195,9 @@ window.addEventListener('DOMContentLoaded', function () {
             s_current = 0;
         }
 
-        var target = -(s_ul.children[0].offsetWidth + 10) * s_num;
+        let target = -(s_ul.children[0].offsetWidth + 10) * s_num;
 
-        for (var i = 0; i < s_circle.children.length; i++) {
+        for (let i = 0; i < s_circle.children.length; i++) {
             s_circle.children[i].className = '';
         }
         s_circle.children[s_current].className = 'current';
@@ -206,12 +206,47 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 
-    
+
 
     //login
     userLogin();
 
 
+
+    // search
+    let userInput = document.querySelector('#user-input');
+    let searchResult = document.querySelector('.search-result');
+    let searchContent = [];
+    userInput.addEventListener('keypress', function (e) {
+        if (e.which === 13 && userInput.value != '') {
+            let message = userInput.value;
+            userInput.value = '';
+            chatAjax({
+                data: message,
+                success: function (result) {
+                    let response = JSON.parse(result);
+                    let reply = response.choices[0].message.content;
+                    searchContent.unshift('<div><strong>Usted:</strong> ' + message + '</div>' + '<div><strong>BigTimeShop:</strong> ' + reply + '</div>');
+
+                    searchResult.innerHTML = searchContent.join('');
+
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr + " : " + status + " : " + error);
+                }
+            })
+        }
+    })
+
+    userInput.addEventListener('focus', function () {
+        searchResult.style.display = 'block';
+        
+    })
+
+    userInput.addEventListener('blur', function () {
+        searchResult.style.display = 'none';
+        
+    })
 
 
     // ajusta la resolucion de la pagina

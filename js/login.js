@@ -9,19 +9,19 @@
 
 window.addEventListener('DOMContentLoaded', function () {
 
-    var form = document.querySelector('form');
-    var email = document.querySelector('#email');
-    var eye = document.querySelector('#eye');
-    var pwd = document.getElementById('password');
-    var login_btn =document.querySelector('#login_btn');
-    var warning_btn = document.querySelector('#warning_btn');
+    let form = document.querySelector('form');
+    let email = document.querySelector('#email');
+    let eye = document.querySelector('#eye');
+    let pwd = document.getElementById('password');
+    let login_btn =document.querySelector('#login_btn');
+    let warning_btn = document.querySelector('#warning_btn');
 
 
 
     login_btn.onclick=function(){
-        var data = getData();
-        var userError = true;
-        for(var i=0;i<data.length;i++){
+        let data = getData();
+        let userError = true;
+        for(let i=0;i<data.length;i++){
             if(data[i].email==email.value&&data[i].pwd==pwd.value){
                 userError = false;
                 sessionStorage.clear();
@@ -33,9 +33,9 @@ window.addEventListener('DOMContentLoaded', function () {
             }
         }
         if(userError){
-            var warning_msg = document.querySelector('.warning_msg');
-            var bg = document.querySelector('#bg');
-            var title = document.querySelector('#bg_title');
+            let warning_msg = document.querySelector('.warning_msg');
+            let bg = document.querySelector('#bg');
+            let title = document.querySelector('#bg_title');
             bg.style.display='block';
             title.innerHTML='Ufffs, Algo mal sucedio!!!';
             warning_msg.innerHTML='Lo siento, el usuario no existe o la contraseña de la cuenta que ingresaste no es correcta.';
@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
     //to  see password
-    var flag = 0;
+    let flag = 0;
     eye.onclick = function () {
         if (flag == 0) {
             flag = 1;
