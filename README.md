@@ -1,7 +1,7 @@
 # Big_Time_Shop
 Big Time Shop es una plataforma líder en comercio electrónico especializada en la venta de productos de electrónica y tecnología de última generación. Descubre una amplia selección de dispositivos móviles de alta calidad.
 
-
+2023-10-03 Updata Incorporamos APIs de busqueda y de google mapa. 
 
 Hemos construido un sitio web de comercio electrónico sencillo utilizando HTML, CSS y JavaScript, con un enfoque principal en la venta de teléfonos, tablets y laptops. El sitio web está compuesto por varios archivos, incluyendo index.html, register.html, login.html，404.html y nosotros.html. En la sección de CSS, hemos creado los archivos base.css y common.css para estilizar la cabecera y el pie de página del sitio. Cada página también tiene su propio archivo CSS específico, como index.css, register.css, login.css y nosotros.css,etc.
 
