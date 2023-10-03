@@ -85,7 +85,7 @@ Desarrollo y programación: 3 semanas.
 
 Creación de contenido: 2 semanas.
 
-8. 8. Recursos externos:
+8. Recursos externos:
 Se integra la Google Maps JavaScript API para visualizar interactivamente la ubicación exacta de nuestra empresa en el sitio web. Esta implementación permite a los visitantes obtener una vista detallada de nuestra localización, facilitando la planificación de visitas presenciales o recogidas. La API garantiza que los mapas estén siempre actualizados con la última versión disponible de Google Maps y proporciona herramientas interactivas, como zoom y vistas panorámicas, para una experiencia de usuario óptima.
 
 9- Desarrollos Futuros y mejoras potenciales: 
