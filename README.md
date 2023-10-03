@@ -85,11 +85,8 @@ Desarrollo y programación: 3 semanas.
 
 Creación de contenido: 2 semanas.
 
-8. Recursos externos: 
-Uso de la API para sincronizar el inventario con sistemas de gestión del almacén.
-Uso de servicios de CDN (Content Delivery Network) para optimizar la carga de imágenes y contenido estático.
-
-* Integracion de Bootstrap apra la funcionalidad de lformulario de contacto.
+8. 8. Recursos externos:
+Se integra la Google Maps JavaScript API para visualizar interactivamente la ubicación exacta de nuestra empresa en el sitio web. Esta implementación permite a los visitantes obtener una vista detallada de nuestra localización, facilitando la planificación de visitas presenciales o recogidas. La API garantiza que los mapas estén siempre actualizados con la última versión disponible de Google Maps y proporciona herramientas interactivas, como zoom y vistas panorámicas, para una experiencia de usuario óptima.
 
 9- Desarrollos Futuros y mejoras potenciales: 
 Incorporación de un sistema de recomendaciones basado en el historial de compras y búsquedas del usuario.
@@ -103,5 +100,6 @@ Chat en vivo para atención al cliente.
 10- mail representante: cuencaarielalan@gmail.com
 
 Fecha de entrega: Desde el miércoles 18 hasta el viernes 20 de Octubre.
+
 
 
