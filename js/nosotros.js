@@ -11,27 +11,36 @@ window.onload = ()=>{
     // search
     let userInput = document.querySelector('#user-input');
     let searchResult = document.querySelector('.search-result');
-    let searchContent = [];
+    
     userInput.addEventListener('keypress', function (e) {
         if (e.which === 13 && userInput.value != '') {
-            let message = userInput.value;
+            let searchTerm = userInput.value;
             userInput.value = '';
-            chatAjax({
-                data: message,
-                success: function (result) {
-                    let response = JSON.parse(result);
-                    let reply = response.choices[0].message.content;
-                    searchContent.unshift('<div><strong>Usted:</strong> ' + message + '</div>' + '<div><strong>BigTimeShop:</strong> ' + reply + '</div>');
+            searchAjax({
+                url: 'https://api.bing.com/qsonhs.aspx',
+                data: {
+                    type: 'cb',
+                    hl: 'es',
+                    q: searchTerm,
+                },
+                jsonp:"cb",
+                jsonpCallback:"bing",
+
+                success: function (data) {
+                    let searchContent = [];
+                    console.log(data);
+                    data.AS.Results[0].Suggests.forEach(function(text,index){
+                        searchContent.push('<div><strong>Resultado '+index+':</strong> <a href="https://www.google.com/search?q='+ text.Txt +'">'+ text.Txt+'</a></div>');
+                    })
+                    
 
                     searchResult.innerHTML = searchContent.join('');
 
                 },
-                error: function (xhr, status, error) {
-                    console.log(xhr + " : " + status + " : " + error);
-                }
             })
         }
     })
+
 
     userInput.addEventListener('focus', function () {
         searchResult.style.display = 'block';
@@ -39,8 +48,9 @@ window.onload = ()=>{
     })
 
     userInput.addEventListener('blur', function () {
-        searchResult.style.display = 'none';
-
+        searchResult.addEventListener('mouseleave',function(){
+            this.style.display = 'none';
+        })
     })
 }
 

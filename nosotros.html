@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Big Time Shop - Tu destino para la electrónica de vanguardia!</title>
+    <title>Big Time: Celulares smart, Tables y Laptos</title>
     <meta name="description"
-        content="Big Time Shop es una plataforma líder en comercio electrónico especializada en la venta de productos de electrónica y tecnología de última generación. Descubre una amplia selección de gadgets, dispositivos móviles y accesorios tecnológicos de alta calidad. Nuestro objetivo es ofrecer a nuestros clientes una experiencia de compra excepcional, brindándoles productos innovadores y garantizando la máxima satisfacción. ¡Explora nuestro catálogo y sumérgete en el mundo de la tecnología de punta!" />
-    <meta name="keywords"
-        content=" Big Time Shop, electrónica, tecnología, gadgets, dispositivos móviles, accesorios tecnológicos, comercio electrónico, calidad, innovación, experiencia de compra." />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        content="Sitio web e-commerce, con el objetivo de que publicar nuestros productos de tecnología y alcanzar una popularidad." />
+    <meta name="keywords" content="compras en línea,compras Online" />
+
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/nosotros.css">
@@ -27,7 +26,7 @@
             <div class="fr">
                 <ul>
                     <li><a href="#">Enviar a <b>3000</b></a></li>
-                    <li><a href="#">Mi carrito</a></li>
+                    <li><a href="#">Sigue a tu pedido</a></li>
                     <li><a href="index.html">Ofertas</a></li>
                 </ul>
             </div>
@@ -62,11 +61,8 @@
     </nav>
     <!-- nav end -->
 
-    <!-- search result  start-->
     <div class="search-result w"></div>
-    <!-- search result  end-->
-
-
+   
     <!--historia start-->
     <section>
         <div class="main w">
@@ -86,6 +82,7 @@
         </div>
     </div>
     <!-- banner end -->
+
     <!--historia text -->
     <section class="section_2 w">
         <div class="section_2-title">
@@ -115,11 +112,75 @@
                 </div>
             </div>
             <div class="us-img">
-                <img src="./images/nosotros/historia2.png" alt="" class="img-img">
+                <img src="./images/nosotros/historia2-min.png" alt="" class="img-img">
             </div>
 
         </div>
     </section>
+    <!--Mision y vision -->
+    <section class="section_2 w">
+        <div class="section_2-title">
+            <h3><span>Nuestro </span><i>Compromiso</i></h3>
+        </div>
+        <div class="us clearfix">
+            <div class="us-text">
+                <div class="us-paragraph">
+                    <p class="paragraph-text">
+                    <h1>Misión:</h1>
+                    En Big Time Shop, nuestra misión es democratizar el acceso a la tecnología de vanguardia. Nos
+                    esforzamos por brindar a nuestros clientes los dispositivos electrónicos y gadgets más innovadores,
+                    garantizando calidad, confianza y un servicio excepcional en cada compra.</p>
+                    <p class="paragraph-text">
+                    <h1>Visión:</h1>
+                    Aspiramos a ser líderes globales en el e-commerce de tecnología, reconocidos por anticipar las
+                    necesidades del futuro y empoderar a individuos de todas partes del mundo con herramientas que
+                    enriquezcan y transformen sus vidas.</p>
+
+                </div>
+            </div>
+            <div class="us-img">
+                <img src="./images/nosotros/mision2.jpg" alt="" class="img-img">
+            </div>
+
+        </div>
+    </section>
+
+    <!--map-->
+    <div class="mapa w">
+        <div class="section_2-title">
+            <h3><span>Nuestra </span><i>Ubicación</i></h3>
+        </div>
+        <!-- en donde position se cambia la ubicacion -->
+        <gmp-map id="marker-click-event-example" center="-34.6037,-58.3816" zoom="10" map-id="Buenos Aires">
+            <gmp-advanced-marker position="-34.603683704508775, -58.38156997072913" title="centro Big Time Shop, CA"></gmp-advanced-marker>
+        </gmp-map>
+    </div>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTNXCtp9lYE0u8mWk2Ls4g1qTTRwACckw&callback=initMap&libraries=maps,marker&v=beta">
+        </script>
+
+    <script>
+        function initMap() {
+            console.log('Maps JavaScript API loaded.');
+
+            const advancedMarkers = document.querySelectorAll("#marker-click-event-example gmp-advanced-marker");
+            for (const advancedMarker of advancedMarkers) {
+                customElements.whenDefined(advancedMarker.localName).then(async () => {
+                    advancedMarker.addEventListener('gmp-click', async () => {
+                        const { InfoWindow } = await google.maps.importLibrary("maps");
+                        const infoWindow = new InfoWindow({
+                            content: advancedMarker.title
+                        });
+                        infoWindow.open({
+                            anchor: advancedMarker
+                        });
+                    });
+                });
+            }
+        }
+    </script>
+
+
 
     <!-- footer start -->
     <footer>
@@ -146,20 +207,20 @@
                 <div class="mod_service">
                     <h4>Categorías más populares</h4>
                     <ul>
-                        <li><a href="index.html">Celulares</a></li>
-                        <li><a href="index.html">Tables</a></li>
-                        <li><a href="index.html">Laptos</a></li>
+                        <li><a href="#">Celulares</a></li>
+                        <li><a href="#">Tables</a></li>
+                        <li><a href="#">Laptos</a></li>
                     </ul>
                 </div>
                 <div class="mod_info">
                     <h4>Servicio al Cliente</h4>
                     <ul>
                         <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                        <li><a href="404.html">Términos y Condiciones</a></li>
-                        <li><a href="404.html">Preguntas Frecuentes</a></li>
-                        <li><a href="404.html">Política de Privacidad</a></li>
-                        <li><a href="404.html">Política de Residuos Electrónicos</a></li>
-                        <li><a href="404.html">Política de Cancelación y Devolución</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Residuos Electrónicos</a></li>
+                        <li><a href="#">Política de Cancelación y Devolución</a></li>
                     </ul>
                 </div>
             </div>
@@ -169,30 +230,6 @@
         </div>
     </footer>
     <!-- footer end -->
-
-    <!-- footer movil start -->
-    <div class="m_footer">
-        <a href="index.html">
-            <div class="home"></div>
-            <p>Home</p>
-        </a>
-        <a href="javascript:;">
-            <div class="msg"></div>
-            <p>Mensaje</p>
-        </a>
-        <a href="register.html">
-            <div class="cart"></div>
-            <p>Carrito</p>
-        </a>
-        <a href="nosotros.html">
-            <div class="more"></div>
-            <p>Nosotros</p>
-        </a>
-    </div>
-    <!-- footer movil end -->
-
-
-
 </body>
 
 </html>

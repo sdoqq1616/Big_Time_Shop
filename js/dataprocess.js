@@ -46,71 +46,45 @@ function userLogin() {
 }
 
 
-function chatAjax(obj) {
-    let defaults = {
-        url: 'https://api.openai.com/v1/chat/completions',
-        type: 'post',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
-        },
-        data: "",
-        async: true,
-        success: function (response) { },
-        error: function (xhr, status, error) { }
-    }
 
-    for (let key in obj) {
-        defaults[key] = obj[key];
-    }
 
-    let xhr = null;
-    if (window.XMLHttpRequest) {
-        xhr = new XMLHttpRequest();
-    } else {
-        xhr = new ActiveXObject('Microsoft.XMLHTTP');
-    }
+function searchAjax(obj){
 
-    
-    let systemContent='You are a world-class salesperson dedicated to online sales of mobile phones, tablets, and computers for the e-commerce website Big Time Shop. It is not allowed for you to disclose that you are an AI assistant or similar.';
-    if(sessionStorage.getItem("user")){
-        let user = JSON.parse(sessionStorage.getItem("user"));
-        systemContent+="Now you need to assist a customer named " + user.username +".";
-    }
-    console.log(systemContent);
-
-    let params = {
-        model: 'gpt-3.5-turbo',
-        messages: [
-            { role: 'system', content: systemContent },
-            { role: 'user', content: defaults.data }
-        ]
-    };
-
-    defaults.data = JSON.stringify(params);
-    defaults.type = 'post'
-
-    xhr.open(defaults.type, defaults.url, defaults.async);
-
-    for (let attr in defaults.headers) {
-        xhr.setRequestHeader(attr, defaults.headers[attr]);
+    var defaults ={
+        url:"#",
+        type:"get",
+        async:true,
+        data:{},
+        success:function(data){},
+        jsonpCallback: "callback",
+        jsonp: "callback",
     }
 
 
-    xhr.send(defaults.data);
-    if (defaults.async) {
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                let result = xhr.responseText;
-                defaults.success(result);
-            }
-        }
-    } else {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            let result = xhr.responseText;
-            defaults.success(result);
-        }
+    for(let key in obj){
+        defaults[key]=obj[key];
     }
+
+    let params = "";
+    for(let attr in defaults.data){
+        params+=attr+"="+defaults.data[attr]+"&";
+    }
+
+    if(params){
+        defaults.url+="?"+params;
+    }
+
+    defaults.url+=defaults.jsonp+"="+defaults.jsonpCallback;
+
+    let script = document.createElement("script");
+    script.src = defaults.url;
+
+    window[defaults.jsonpCallback] = function (data) {
+        defaults.success(data);
+    }
+
+    let head = document.querySelector("head");
+    head.appendChild(script);
 
 
 }
